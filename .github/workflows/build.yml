@@ -1,0 +1,32 @@
+name: Build Check
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Main Repository
+      uses: actions/checkout@v2
+      with:
+        repository: 'DbSyncKit/DbSyncKit'  
+        submodules: true
+
+    - name: Pull & update submodules recursively
+      run: |
+          git submodule update --init --recursive
+          git submodule update --recursive --remote
+ 
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Build DbSyncKit
+      run: |
+        cd DbSyncKit.SQLite/src
+        dotnet build -c Release

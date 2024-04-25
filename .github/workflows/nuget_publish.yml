@@ -1,0 +1,34 @@
+name: Build and Publish NuGet Package
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Main Repository
+      uses: actions/checkout@v2
+      with:
+        repository: 'DbSyncKit/DbSyncKit'  
+
+    - name: Pull & update submodules recursively
+      run: |
+          git submodule update --init --recursive
+          git submodule update --recursive --remote
+ 
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Build and PublishDbSyncKit.SQLite
+      run: |
+        cd DbSyncKit.SQLite/src
+        dotnet build -c Release
+        dotnet pack -c Release
+        dotnet nuget push bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_DEPLOY }}
+        
