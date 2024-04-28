@@ -60,7 +60,6 @@ namespace DbSyncKit.SQLite
         {
             try
             {
-                SQLitePCL.Batteries.Init();
 
                 using (SqliteConnection sqliteConnection = new(GetConnectionString()))
                 {
