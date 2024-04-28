@@ -4,10 +4,15 @@
 	<TargetFrameworks>net7.0;net8.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<AssemblyVersion>1.5.0.0</AssemblyVersion>
+	<FileVersion>1.5.0.0</FileVersion>
+	<Version>1.5.0.0</Version>
 	<PackageProjectUrl>https://dbsynckit.rohit-mahajan.in/</PackageProjectUrl>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<RepositoryUrl>https://github.com/RohitM-IN/DbSyncKit</RepositoryUrl>
 	<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
