@@ -6,9 +6,9 @@
     <Nullable>enable</Nullable>
 	<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	<AssemblyVersion>1.5.1.0</AssemblyVersion>
-	<FileVersion>1.5.1.0</FileVersion>
-	<Version>1.5.1.0</Version>
+	<AssemblyVersion>1.5.1.1</AssemblyVersion>
+	<FileVersion>1.5.1.1</FileVersion>
+	<Version>1.5.1.1</Version>
 	<PackageProjectUrl>https://dbsynckit.rohit-mahajan.in/</PackageProjectUrl>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<RepositoryUrl>https://github.com/RohitM-IN/DbSyncKit</RepositoryUrl>
@@ -28,6 +28,8 @@
   <PropertyGroup>
 	<IncludeSymbols>true</IncludeSymbols>
 	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	<Description>Enhance your SQLite database queries with DbSyncKit.Templates.SQLite. This package delivers templates for SELECT, INSERT, UPDATE, DELETE, and COMMENT queries, simplifying SQL operations for improved readability and efficiency.</Description>
+	<PackageTags>database;sqlite;dbsync;dbsynckit</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
